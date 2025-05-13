@@ -1,3 +1,7 @@
+---
+title: "Hello, Astro!"
+---
+
 # Hello, Astro!
 
 Hi, I'm Andy.
