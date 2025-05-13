@@ -1,0 +1,27 @@
+---
+import Layout from "../layouts/Layout.astro";
+
+export async function getStaticPaths() {
+  const allPosts = Object.values(
+    import.meta.glob("./_posts/*.md", { eager: true })
+  );
+  return allPosts.map((post: any) => {
+    const datePosted = new Date(post.frontmatter.datePosted);
+    const postSlug = post.file.split("/").pop().split(".")[0]; // Use filename as slug
+    return {
+      params: {
+        slug: `${datePosted.getFullYear()}/${datePosted.getMonth()}/${datePosted.getDate()}/${postSlug}`,
+      },
+      props: { post },
+    };
+  });
+}
+
+const { post } = Astro.props;
+---
+
+<Layout>
+  <h1>{post.frontmatter.title}</h1>
+  <p>{post.frontmatter.datePosted}</p>
+  <post.Content />
+</Layout>

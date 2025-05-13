@@ -1,5 +1,6 @@
 ---
-title: "Hello, Astro!"
+title: Hello, Astro!
+datePosted: 2025-05-08
 ---
 
 # Hello, Astro!
