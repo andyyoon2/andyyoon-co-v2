@@ -10,7 +10,7 @@ export async function getStaticPaths() {
     const postSlug = post.file.split("/").pop().split(".")[0]; // Use filename as slug
     return {
       params: {
-        slug: `${datePosted.getFullYear()}/${datePosted.getMonth()}/${datePosted.getDate()}/${postSlug}`,
+        slug: `${datePosted.getFullYear()}/${datePosted.getMonth() + 1}/${datePosted.getDate()}/${postSlug}`,
       },
       props: { post },
     };
@@ -18,10 +18,24 @@ export async function getStaticPaths() {
 }
 
 const { post } = Astro.props;
+const datePosted = new Date(post.frontmatter.datePosted).toLocaleDateString(
+  "en-US",
+  {
+    year: "numeric",
+    month: "long",
+    day: "numeric",
+  }
+);
 ---
 
 <Layout>
-  <h1>{post.frontmatter.title}</h1>
-  <p>{post.frontmatter.datePosted}</p>
-  <post.Content />
+  <main class="flex-1 my-8">
+    <article
+      class="prose prose-slate dark:prose-invert lg:prose-lg mx-auto px-4 md:px-8 lg:px-12"
+    >
+      <h1>{post.frontmatter.title}</h1>
+      <p>{datePosted}</p>
+      <post.Content />
+    </article>
+  </main>
 </Layout>

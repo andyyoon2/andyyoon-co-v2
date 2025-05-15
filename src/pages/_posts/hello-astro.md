@@ -3,8 +3,6 @@ title: Hello, Astro!
 datePosted: 2025-05-08
 ---
 
-# Hello, Astro!
-
 Hi, I'm Andy.
 
 Welcome to my new blog, and yet another personal website.
