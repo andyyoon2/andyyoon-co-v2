@@ -3,25 +3,34 @@ import { Image } from "astro:assets";
 import Layout from "../layouts/Layout.astro";
 import RecentPosts from "../components/RecentPosts.astro";
 import avatar from "../assets/avatar.jpg";
+import EmailIcon from "../icons/EmailIcon.astro";
+import GitHubIcon from "../icons/GitHubIcon.astro";
 
-const headingClasses = "text-2xl md:text-3xl font-semibold mb-4 md:mb-8";
+const headingClasses =
+  "text-2xl md:text-3xl font-semibold mb-8 md:mb-12 text-center";
+const sectionClasses = "mb-24 md:mb-30";
 ---
 
 <Layout>
-  <section class="flex flex-col items-center gap-4 mt-24 md:mt-32">
+  <section
+    class:list={[
+      sectionClasses,
+      "flex flex-col items-center gap-6 mt-24 md:mt-32",
+    ]}
+  >
     <Image
       src={avatar}
       alt="Andy Yoon"
       class="h-40 w-40 md:h-48 md:w-48 rounded-full shadow-md dark:shadow-stone-900"
     />
-    <h2 class="text-2xl md:text-3xl font-semibold">Hi, I'm Andy!</h2>
+    <h2 class="text-2xl md:text-3xl font-semibold md:mb-2">Hi, I'm Andy!</h2>
     <h3 class="text-lg md:text-xl">
       Lead Frontend Engineer at
       <a class="underline" href="https://www.openevidence.com">OpenEvidence</a>.
     </h3>
   </section>
 
-  <section class="md:text-lg flex flex-col gap-4">
+  <section class:list={[sectionClasses, "md:text-lg flex flex-col gap-4"]}>
     <p>
       I love building intuitive products to empower people to make wiser
       decisions. Here I share reflections on life and my journey of learning by
@@ -30,19 +39,27 @@ const headingClasses = "text-2xl md:text-3xl font-semibold mb-4 md:mb-8";
     <p>I enjoy reading, traveling, and running.</p>
   </section>
 
-  <section>
+  <section class={sectionClasses}>
     <h2 class={headingClasses}>Recent Posts</h2>
     <RecentPosts />
   </section>
 
-  <section>
+  <section class={sectionClasses}>
     <h2 class={headingClasses}>Say Hello</h2>
-    <ul class="flex gap-2">
-      <li>
-        <a class="underline" href="https://www.github.com/andyyoon2">GitHub</a>
+    <ul
+      class="flex flex-col items-center md:flex-row gap-8 md:gap-16 md:justify-center"
+    >
+      <li class="flex items-center gap-4">
+        <GitHubIcon />
+        <a class="underline md:text-lg" href="https://www.github.com/andyyoon2"
+          >andyyoon2</a
+        >
       </li>
-      <li>
-        <a class="underline" href="mailto:insoo.yoon@proton.me">Email</a>
+      <li class="flex items-center gap-4">
+        <EmailIcon />
+        <a class="underline md:text-lg" href="mailto:insoo.yoon@proton.me"
+          >insoo.yoon@proton.me</a
+        >
       </li>
     </ul>
   </section>
