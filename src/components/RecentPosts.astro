@@ -1,0 +1,19 @@
+---
+import { getStaticPaths } from "../pages/[...slug].astro";
+
+// Maybe this is silly maybe not. Probably makes more sense with content collections
+const allPaths = await getStaticPaths();
+const allPosts = allPaths.map((path) => ({
+  href: path.params.slug,
+  frontmatter: path.props.post.frontmatter,
+}));
+---
+
+{/* TODO: Make into a content collection */}
+{
+  allPosts.map((post: any) => (
+    <section>
+      <a href={post.href}>{post.frontmatter.title}</a>
+    </section>
+  ))
+}

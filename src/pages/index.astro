@@ -1,28 +1,49 @@
 ---
+import { Image } from "astro:assets";
 import Layout from "../layouts/Layout.astro";
-import { getStaticPaths } from "./[...slug].astro";
+import RecentPosts from "../components/RecentPosts.astro";
+import avatar from "../assets/avatar.jpg";
 
-// Maybe this is silly maybe not. Probably makes more sense with content collections
-const allPaths = await getStaticPaths();
-const allPosts = allPaths.map((path) => ({
-  href: path.params.slug,
-  frontmatter: path.props.post.frontmatter,
-}));
+const headingClasses = "text-2xl md:text-3xl font-semibold mb-4 md:mb-8";
 ---
 
 <Layout>
-  <h1>Blog</h1>
-  <p>
-    {JSON.stringify(allPosts)}
-  </p>
-  <ul>
-    {/* TODO: Make into a content collection */}
-    {
-      allPosts.map((post: any) => (
-        <li>
-          <a href={post.href}>{post.frontmatter.title}</a>
-        </li>
-      ))
-    }
-  </ul>
+  <section class="flex flex-col items-center gap-4 mt-24 md:mt-32">
+    <Image
+      src={avatar}
+      alt="Andy Yoon"
+      class="h-40 w-40 md:h-48 md:w-48 rounded-full shadow-md dark:shadow-stone-900"
+    />
+    <h2 class="text-2xl md:text-3xl font-semibold">Hi, I'm Andy!</h2>
+    <h3 class="text-lg md:text-xl">
+      Lead Frontend Engineer at
+      <a class="underline" href="https://www.openevidence.com">OpenEvidence</a>.
+    </h3>
+  </section>
+
+  <section class="md:text-lg flex flex-col gap-4">
+    <p>
+      I love building intuitive products to empower people to make wiser
+      decisions. Here I share reflections on life and my journey of learning by
+      building projects.
+    </p>
+    <p>I enjoy reading, traveling, and running.</p>
+  </section>
+
+  <section>
+    <h2 class={headingClasses}>Recent Posts</h2>
+    <RecentPosts />
+  </section>
+
+  <section>
+    <h2 class={headingClasses}>Say Hello</h2>
+    <ul class="flex gap-2">
+      <li>
+        <a class="underline" href="https://www.github.com/andyyoon2">GitHub</a>
+      </li>
+      <li>
+        <a class="underline" href="mailto:insoo.yoon@proton.me">Email</a>
+      </li>
+    </ul>
+  </section>
 </Layout>

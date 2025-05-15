@@ -1,7 +1,6 @@
 ---
 import Footer from "../components/Footer.astro";
 import GlobalStyles from "../components/GlobalStyles.astro";
-import ProfileCard from "../components/ProfileCard.astro";
 import Header from "../components/Header.astro";
 ---
 
@@ -15,16 +14,11 @@ import Header from "../components/Header.astro";
     <title>My Blog in Astro</title>
   </head>
   <body
-    class="flex flex-col justify-between align-stretch min-h-screen bg-slate-200 dark:bg-zinc-800 text-zinc-900 dark:text-zinc-100"
+    class="flex flex-col justify-between align-stretch min-h-screen bg-slate-200 dark:bg-zinc-800 text-zinc-900 dark:text-zinc-100 max-w-2xl mx-auto px-4 md:px-0"
   >
     <GlobalStyles />
-    <Header />
+    <!-- <Header /> -->
     <slot />
-    <!-- <div class="flex justify-between align-start">
-      <div class="basis-md">
-        <ProfileCard />
-      </div>
-    </div> -->
     <Footer />
   </body>
 </html>
