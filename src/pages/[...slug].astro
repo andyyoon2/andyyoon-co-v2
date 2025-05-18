@@ -29,11 +29,11 @@ const datePosted = new Date(post.frontmatter.datePosted).toLocaleDateString(
 ---
 
 <Layout>
-  <main class="flex-1 my-8">
-    <article class="prose prose-slate dark:prose-invert lg:prose-lg mx-auto">
-      <h1>{post.frontmatter.title}</h1>
-      <p>{datePosted}</p>
-      <post.Content />
-    </article>
-  </main>
+  <article
+    class="flex-1 my-8 prose prose-slate dark:prose-invert lg:prose-lg mx-auto"
+  >
+    <h1>{post.frontmatter.title}</h1>
+    <p>{datePosted}</p>
+    <post.Content />
+  </article>
 </Layout>
