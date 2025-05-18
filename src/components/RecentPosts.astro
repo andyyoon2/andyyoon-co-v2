@@ -1,0 +1,40 @@
+---
+import { getStaticPaths } from "../pages/posts/[...slug].astro";
+
+// Maybe this is silly maybe not. Probably makes more sense with content collections
+const allPaths = await getStaticPaths();
+const allPosts = allPaths.map((path) => ({
+  href: path.params.slug,
+  frontmatter: path.props.post.frontmatter,
+}));
+
+const getDatePosted = (post: any) =>
+  new Date(post.frontmatter.datePosted).toLocaleDateString("en-US", {
+    year: "numeric",
+    month: "long",
+    day: "numeric",
+  });
+---
+
+{/* TODO: Make into a content collection */}
+<div class="flex flex-col gap-9">
+  {
+    allPosts
+      .toSorted(
+        (a, b) =>
+          new Date(b.frontmatter.datePosted).getTime() -
+          new Date(a.frontmatter.datePosted).getTime()
+      )
+      .map((post: any) => (
+        <article class="flex flex-col items-start gap-3">
+          <a class="underline text-lg md:text-xl" href={`/posts/${post.href}`}>
+            {post.frontmatter.title}
+          </a>
+          {post.frontmatter.description && (
+            <p>{post.frontmatter.description}</p>
+          )}
+          <p class="text-zinc-500 dark:text-zinc-400">{getDatePosted(post)}</p>
+        </article>
+      ))
+  }
+</div>

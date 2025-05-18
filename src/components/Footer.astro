@@ -1,18 +1,14 @@
 ---
+import Signature from "./Signature.astro";
 const today = new Date();
 ---
 
-<footer>
-  <p>
-    &copy; {today.getFullYear()} Andy Yoon
+<footer class="text-center p-4 mt-16">
+  <p
+    class="text-zinc-800 dark:text-zinc-300 flex justify-center items-center gap-2"
+  >
+    <span class="text-gray-600 dark:text-neutral-400"><Signature /></span>
+    <span class="ml-2">&copy;</span>
+    <span>{today.getFullYear()}</span>
   </p>
 </footer>
-
-<style>
-  footer {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 1rem 0;
-  }
-</style>

@@ -1,4 +1,7 @@
-# Hello, Astro!
+---
+title: Hello, Astro!
+datePosted: 2025-05-08
+---
 
 Hi, I'm Andy.
 

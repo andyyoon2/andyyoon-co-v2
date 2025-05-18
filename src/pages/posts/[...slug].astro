@@ -1,0 +1,42 @@
+---
+import Layout from "../../layouts/Layout.astro";
+
+export async function getStaticPaths() {
+  const allPosts = Object.values(
+    import.meta.glob("./_posts/*.md", { eager: true })
+  );
+  return allPosts.map((post: any) => {
+    const datePosted = new Date(post.frontmatter.datePosted);
+    const postSlug = post.file.split("/").pop().split(".")[0]; // Use filename as slug
+    return {
+      params: {
+        slug: `${datePosted.getFullYear()}/${datePosted.getMonth() + 1}/${datePosted.getDate()}/${postSlug}`,
+      },
+      props: { post },
+    };
+  });
+}
+
+const { post } = Astro.props;
+const datePosted = new Date(post.frontmatter.datePosted).toLocaleDateString(
+  "en-US",
+  {
+    year: "numeric",
+    month: "long",
+    day: "numeric",
+  }
+);
+---
+
+<Layout>
+  <article
+    class="flex-1 mt-24 md:mt-32 mb-12 md:mb-24 prose prose-slate dark:prose-invert lg:prose-lg mx-auto"
+  >
+    <h1>{post.frontmatter.title}</h1>
+    <p class="text-zinc-500 dark:text-zinc-400">
+      {post.frontmatter.description}
+    </p>
+    <p class="text-zinc-500 dark:text-zinc-400 mb-8">{datePosted}</p>
+    <post.Content />
+  </article>
+</Layout>
