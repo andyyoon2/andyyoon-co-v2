@@ -33,7 +33,10 @@ const datePosted = new Date(post.frontmatter.datePosted).toLocaleDateString(
     class="flex-1 my-8 prose prose-slate dark:prose-invert lg:prose-lg mx-auto"
   >
     <h1>{post.frontmatter.title}</h1>
-    <p>{datePosted}</p>
+    <p class="text-zinc-500 dark:text-zinc-400">
+      {post.frontmatter.description}
+    </p>
+    <p class="text-zinc-500 dark:text-zinc-400 mb-8">{datePosted}</p>
     <post.Content />
   </article>
 </Layout>
