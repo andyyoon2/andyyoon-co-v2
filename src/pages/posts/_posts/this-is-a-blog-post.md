@@ -1,10 +1,8 @@
 ---
 title: This Is a Blog Post.
-description: Because writers write.
+description: It's not a good post. I don't expect you to read it.
 datePosted: 2025-08-17
 ---
-
-It's not a good post. I don't expect you to read it.
 
 Here I am to cultivate the critical practice of writing and publishing.
 
