@@ -14,8 +14,6 @@ I spend time working on a habit, building up the routine and the muscle of repet
 
 The solution is simple: Commit to the activities that work. If I'm going to be as high leverage as I wish to be, then I need consistent, disciplined commitment to my core habits.
 
-Having spent the last 3+ years being acutely aware of my habits and eradicating harmful behaviors, I am very conscious of how my habits affect me and which ones work.
-
 What works for me:
 
 - Meditate in the morning for at least 10 minutes.
