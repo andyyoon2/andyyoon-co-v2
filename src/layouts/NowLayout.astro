@@ -1,0 +1,28 @@
+---
+// Vendored from pages/posts/[...slug].astro
+import Layout from "./Layout.astro";
+
+const { frontmatter } = Astro.props;
+---
+
+<Layout>
+  <article
+    class="flex-1 mt-24 md:mt-32 mb-12 md:mb-24 prose prose-slate dark:prose-invert lg:prose-lg mx-auto"
+  >
+    <h1>{frontmatter.title}</h1>
+    <p class="text-zinc-500 dark:text-zinc-400 mb-8">
+      Last updated {new Date(frontmatter.lastUpdated).toLocaleDateString(
+        "en-US",
+        {
+          year: "numeric",
+          month: "long",
+          day: "numeric",
+        }
+      )}
+    </p>
+    <a class="text-zinc-500 dark:text-zinc-400 underline" href="https://nownownow.com/about" target="_blank"
+      >(What is this?)</a
+    >
+    <slot />
+  </article>
+</Layout>
