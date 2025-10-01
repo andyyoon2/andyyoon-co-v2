@@ -5,7 +5,7 @@ import Layout from "./Layout.astro";
 const { frontmatter } = Astro.props;
 ---
 
-<Layout>
+<Layout title={frontmatter.title}>
   <article
     class="flex-1 mt-24 md:mt-32 mb-12 md:mb-24 prose prose-slate dark:prose-invert lg:prose-lg mx-auto"
   >

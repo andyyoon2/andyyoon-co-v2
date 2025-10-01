@@ -28,7 +28,7 @@ const datePosted = new Date(post.frontmatter.datePosted).toLocaleDateString(
 );
 ---
 
-<Layout>
+<Layout title={post.frontmatter.title}>
   <article
     class="flex-1 mt-24 md:mt-32 mb-12 md:mb-24 prose prose-slate dark:prose-invert lg:prose-lg mx-auto"
   >
