@@ -30,13 +30,29 @@ const datePosted = new Date(post.frontmatter.datePosted).toLocaleDateString(
 
 <Layout title={post.frontmatter.title}>
   <article
-    class="flex-1 mt-24 md:mt-32 mb-12 md:mb-24 prose prose-slate dark:prose-invert lg:prose-lg mx-auto"
+    class="flex-1 mt-24 md:mt-32 prose prose-slate dark:prose-invert lg:prose-lg mx-auto"
   >
-    <h1>{post.frontmatter.title}</h1>
-    <p class="text-zinc-500 dark:text-zinc-400">
+    <h1 class="!mb-6">{post.frontmatter.title}</h1>
+    <p class="text-zinc-500 dark:text-zinc-400 !my-3">
       {post.frontmatter.description}
     </p>
-    <p class="text-zinc-500 dark:text-zinc-400 mb-8">{datePosted}</p>
+    <p class="text-zinc-500 dark:text-zinc-400 !mt-3 mb-10">{datePosted}</p>
     <post.Content />
+
+    <hr class="!my-24 border-zinc-700 dark:border-zinc-300 w-30 mx-auto" />
+
+    <div>
+      <p>
+        Something resonates?
+        <a
+          class="text-zinc-500 dark:text-zinc-400 hover:text-zinc-900 hover:dark:text-zinc-100 underline"
+          href="mailto:insoo.yoon@proton.me">Send me an email.</a
+        >
+      </p>
+      <a
+        class="text-zinc-500 dark:text-zinc-400 hover:text-zinc-900 hover:dark:text-zinc-100 underline"
+        href="/#posts">← See all posts</a
+      >
+    </div>
   </article>
 </Layout>
