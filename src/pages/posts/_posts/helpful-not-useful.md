@@ -26,6 +26,6 @@ The most freedom I've found in the last several months: Sitting down and decidin
 
 Usually I love jumping in to help, relishing every opportunity to learn and do my best. But if I'm "doing my best" in turning around unimportant asks, is that really my *best*?
 
-Your best isn't accomplished by fulfilling others' agendas. Your best is accomplished in that which you know you must do. Even if you're not sure what that is yet, you're the only one that can explore your path. Find your next step; you're the only one that can take it.
+Your best isn't accomplished by fulfilling others' agendas. Your best is accomplished in that which you know you must do. Even if you're not sure what that is yet, you're the only one that can explore your path.
 
 Your next step need not align with what others want you to do. But as long as you're true to what you're doing, you'll have a chance to find those who are aligned with you. Those who want you to be you.
