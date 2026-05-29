@@ -11,20 +11,23 @@ const headingClasses =
 const sectionClasses = "mb-24 md:mb-44";
 ---
 
-<Layout title="Software Engineer">
+<Layout>
   <section
     class:list={[
       sectionClasses,
-      "flex flex-col items-center gap-6 mt-24 md:mt-32",
+      "flex flex-col items-center mt-24 md:mt-32",
     ]}
   >
     <Image
       src={avatar}
       alt="Andy Yoon"
-      class="h-40 w-40 md:h-48 md:w-48 rounded-full shadow-md shadow-stone-400 dark:shadow-stone-900"
+      class="h-40 w-40 md:h-48 md:w-48 rounded-full shadow-md shadow-stone-400 dark:shadow-stone-900 mb-6"
     />
-    <h2 class="text-2xl md:text-3xl font-semibold md:mb-2">Hi, I'm Andy!</h2>
-    <h3 class="text-lg md:text-xl">
+    <h2 class="text-2xl md:text-3xl font-semibold mb-10">Hi, I&rsquo;m Andy!</h2>
+    <h3 class="text-lg md:text-xl text-center mb-4">
+      Cultivating high quality work <span class="inline-block">&amp; delighting in the process.</span>
+    </h3>
+    <h3 class="text-lg md:text-xl text-center">
       Lead Frontend Engineer at
       <a class="underline" href="https://www.openevidence.com" target="_blank"
         >OpenEvidence</a
@@ -38,12 +41,12 @@ const sectionClasses = "mb-24 md:mb-44";
       decisions.
     </p>
     <p>
-      I'm on a journey of self-discovery and learning. I hope you find something
-      here that can help you in your own life.
+      I'm on a journey of self-discovery and learning. I hope you find insights
+      here that help you in your own life.
     </p>
     <p>
-      Read more about
-      <a class="underline" href="/now">what I'm doing now</a>
+      Read about
+      <a class="underline" href="/now">what I'm doing now</a>.
     </p>
   </section>
 
@@ -58,15 +61,15 @@ const sectionClasses = "mb-24 md:mb-44";
       class="flex flex-col items-center md:flex-row gap-8 md:gap-16 md:justify-center"
     >
       <li class="flex items-center gap-4">
-        <GitHubIcon />
-        <a class="underline md:text-lg" href="https://www.github.com/andyyoon2"
-          >andyyoon2</a
-        >
-      </li>
-      <li class="flex items-center gap-4">
         <EmailIcon />
         <a class="underline md:text-lg" href="mailto:hello@andyyoon.co"
           >hello@andyyoon.co</a
+        >
+      </li>
+      <li class="flex items-center gap-4">
+        <GitHubIcon />
+        <a class="underline md:text-lg" href="https://www.github.com/andyyoon2"
+          >andyyoon2</a
         >
       </li>
     </ul>
