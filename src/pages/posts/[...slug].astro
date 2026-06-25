@@ -30,7 +30,7 @@ const datePosted = new Date(post.frontmatter.datePosted).toLocaleDateString(
 
 <Layout title={post.frontmatter.title}>
   <article
-    class="flex-1 mt-24 md:mt-32 prose-mine dark:prose-invert lg:prose-lg mx-auto"
+    class="flex-1 mt-24 md:mt-32 prose-mine dark:prose-invert lg:prose-lg max-w-2xl mx-auto"
   >
     <h1 class="!mb-6">{post.frontmatter.title}</h1>
     <p class="text-secondary !mt-3 !mb-0">
@@ -39,18 +39,18 @@ const datePosted = new Date(post.frontmatter.datePosted).toLocaleDateString(
     <p class="text-secondary !mt-2 !mb-12">{datePosted}</p>
     <post.Content />
 
-    <hr class="!my-24 border-zinc-700 dark:border-zinc-300 w-30 mx-auto" />
+    <hr class="!my-24 border-tertiary w-30 mx-auto" />
 
     <div>
       <p>
         Something resonates?
         <a
-          class="text-secondary underline"
+          class="text-secondary font-normal underline"
           href="mailto:hello@andyyoon.co">Send me an email.</a
         >
       </p>
       <a
-        class="text-secondary underline"
+        class="text-secondary font-normal underline"
         href="/#posts">← See all posts</a
       >
     </div>

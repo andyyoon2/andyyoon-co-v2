@@ -1,9 +1,6 @@
----
-const isHome = Astro.url.pathname === '/';
----
-
-{!isHome && (
-  <header class="max-w-2xl mx-auto sticky top-0 py-4 w-full backdrop-blur-xs">
-    <a class="hover:underline" href="/">Andy Yoon</a>
-  </header>
-)}
+<header class="max-w-2xl mx-auto sticky top-0 py-4 w-full flex justify-between items-center gap-4 backdrop-blur-xs">
+  <a class="hover:underline" href="/">Home</a>
+  <div class="flex-1" />
+  <a class="hover:underline" href="/#blog">Blog</a>
+  <a class="hover:underline" href="/#contact">Contact</a>
+</header>
