@@ -7,7 +7,7 @@ const { frontmatter } = Astro.props;
 
 <Layout title={frontmatter.title}>
   <article
-    class="flex-1 mt-24 md:mt-32 mb-12 md:mb-24 prose prose-neutral dark:prose-invert lg:prose-lg mx-auto"
+    class="flex-1 mt-24 md:mt-32 mb-12 md:mb-24 prose-mine dark:prose-invert lg:prose-lg max-w-2xl mx-auto"
   >
     <h1>{frontmatter.title}</h1>
     <p class="text-secondary mb-8">
@@ -20,7 +20,7 @@ const { frontmatter } = Astro.props;
         }
       )}
     </p>
-    <a class="text-secondary underline" href="https://nownownow.com/about" target="_blank"
+    <a class="text-secondary font-normal underline" href="https://nownownow.com/about" target="_blank"
       >(What is this?)</a
     >
     <slot />
