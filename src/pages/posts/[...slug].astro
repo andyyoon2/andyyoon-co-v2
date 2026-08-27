@@ -37,7 +37,10 @@ const datePosted = new Date(post.frontmatter.datePosted).toLocaleDateString(
       {post.frontmatter.description}
     </p>
     <p class="text-secondary !mt-2 !mb-12">{datePosted}</p>
-    <post.Content />
+
+    <div class="min-h-96">
+      <post.Content />
+    </div>
 
     <hr class="!my-24 border-tertiary w-30 mx-auto" />
 
@@ -51,7 +54,7 @@ const datePosted = new Date(post.frontmatter.datePosted).toLocaleDateString(
       </p>
       <a
         class="text-secondary font-normal underline"
-        href="/#posts">← See all posts</a
+        href="/#blog">← See all posts</a
       >
     </div>
   </article>

@@ -21,10 +21,10 @@ const fullTitle = title ? `${title} | ${baseTitle}` : baseTitle
     <meta name="generator" content={Astro.generator} />
     <title>{fullTitle}</title>
   </head>
-  <body class="bg-background text-foreground px-4 md:px-0">
+  <body class="bg-background text-foreground px-4 md:px-0 min-h-screen">
     <Header />
     <main
-      class="flex flex-col justify-between align-stretch min-h-screen max-w-2xl mx-auto"
+      class="flex flex-col justify-between align-stretch max-w-2xl mx-auto"
     >
       <slot />
     </main>
